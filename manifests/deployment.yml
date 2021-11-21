@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: appngnix 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appngnix
+  template:
+    metadata:
+      labels:
+        app: appngnix 
+    spec:
+      containers:
+        - name: appngnix 
+          image: aksdevopsacrswap.azurecr.io/appngnix
+          ports:
+          - containerPort: 80
